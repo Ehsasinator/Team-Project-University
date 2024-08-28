@@ -8,4 +8,4 @@ My Team and I created this project using Angular Springboot, for more informatio
 
 
 
-[![Watch the video](https://img.icons8.com/clouds/452/play.png)](https://drive.google.com/file/d/12CirOQhb7lHTAiHADkHUg-p-AjAGRXAF/preview)
+[![Watch the video](Screenshot 2024-08-28 at 23.58.32.png)](https://drive.google.com/file/d/12CirOQhb7lHTAiHADkHUg-p-AjAGRXAF/preview)
