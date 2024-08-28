@@ -6,6 +6,7 @@ I used the AI trainer to create a h5 file. In this project, i used a python file
 
 My Team and I created this project using Angular Springboot, for more information click the team34 folder to see a more detailed readME
 
+Click image below to see my team and I demostrate the website. Go to 5:22 to see my AI feature implemented
 
 
 [![Watch the video](Screenshot%202024-08-28%20at%2023.58.32.png)](https://drive.google.com/file/d/12CirOQhb7lHTAiHADkHUg-p-AjAGRXAF/preview)
