@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userSettings">
+      <h2 data-cy="userSettingsDetailsHeading"><span>User Settings</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ userSettings.id }}</span>
+        </dd>
+        <dt><span>Theme</span></dt>
+        <dd>
+          <span>{{ userSettings.theme }}</span>
+        </dd>
+        <dt><span>Hud</span></dt>
+        <dd>
+          <span>{{ userSettings.hud }}</span>
+        </dd>
+        <dt><span>Font Size</span></dt>
+        <dd>
+          <span>{{ userSettings.fontSize }}</span>
+        </dd>
+        <dt><span>Dyslexic Font</span></dt>
+        <dd>
+          <span>{{ userSettings.dyslexicFont }}</span>
+        </dd>
+        <dt><span>Colour Blindness</span></dt>
+        <dd>
+          <span>{{ userSettings.colourBlindness }}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+          <span>{{ userSettings.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-settings', userSettings.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

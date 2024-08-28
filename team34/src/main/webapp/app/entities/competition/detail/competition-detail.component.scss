@@ -1,0 +1,166 @@
+body {
+  background-color: #4c27ac;
+  font-family: 'Press Start 2P';
+  padding-bottom: 30px;
+}
+
+#word {
+  font-size: 50px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#hidden {
+  text-align: center;
+  color: #1eff00;
+}
+
+#gap {
+  margin-bottom: 2.5vw;
+}
+
+#gap2 {
+  margin-bottom: 2.5vw;
+}
+
+#date,
+#open,
+#open-2,
+#id,
+#title {
+  font-size: 18px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#open {
+  white-space: pre;
+}
+
+#open-message {
+  display: flex;
+  flex-direction: row;
+}
+
+.green {
+  color: green !important;
+}
+
+.red {
+  color: red !important;
+}
+
+.row-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fancy {
+  color: white !important;
+  height: 100%;
+  background-color: #349ebe;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px rgb(2, 104, 155), 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+  user-select: none;
+}
+
+.fancy:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.buttons-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#no-result {
+  font-size: 20px;
+  text-align: center;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+}
+
+.entry-image {
+  width: 100%;
+  height: auto;
+}
+
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.3s ease;
+}
+
+.table-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-cell {
+  flex: 1 0 25%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.image-container img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.image-container {
+  position: relative;
+  border: 5px solid transparent;
+  display: inline-block;
+  // transition: border-color 0.3s ease;
+}
+
+.image-container:hover {
+  border: 5px solid yellowgreen;
+}
+
+.hidden-text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ede9d6;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-container:hover .hidden-text {
+  display: block;
+}
+
+#back,
+#new,
+#edit,
+#refresh {
+  font-size: 15px;
+}

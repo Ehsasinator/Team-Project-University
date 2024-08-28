@@ -1,0 +1,139 @@
+body {
+  background-color: #ede9d6;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  font-family: 'Press Start 2P';
+}
+
+#apply {
+  background-color: yellow;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#title {
+  font-size: 35px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.fancy {
+  color: white !important;
+  height: 100%;
+  background-color: #349ebe;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px rgb(2, 104, 155), 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+  user-select: none;
+}
+
+.fancy:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.table-titles {
+}
+
+.table {
+  font-size: 20px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  user-select: none;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  outline: 4px solid #4c27ac;
+}
+
+.main-table td {
+  vertical-align: middle;
+}
+
+#gap {
+  margin-bottom: 1vw;
+}
+
+#gap-top {
+  margin-bottom: 1.5vw;
+}
+
+#gap-horizontal {
+  margin-left: 1vw;
+}
+
+#no-result {
+  font-size: 20px;
+  text-align: center;
+}
+
+#competition,
+#home,
+#refresh {
+  font-size: 15px;
+}
+
+#edit,
+#view {
+  font-size: 13px;
+}
+
+th[scope='col'] #sort-like {
+  cursor: pointer;
+}
+
+th[scope='col'] #sort-date {
+  cursor: pointer;
+}
+
+.green {
+  color: #1eff00;
+}
+
+.red {
+  color: red;
+}
+
+.search-button {
+  flex-shrink: 0;
+  text-decoration: none;
+  border: 1px black;
+  transition: all 0.2 ease;
+  user-select: none;
+  background-color: #ffd500;
+  height: 29px;
+  box-shadow: 0px 6px 0px rgb(195, 172, 30), 0px 8px 20px #222222;
+  color: white;
+  cursor: pointer;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.search-button:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.custom-input {
+  height: 35px;
+}

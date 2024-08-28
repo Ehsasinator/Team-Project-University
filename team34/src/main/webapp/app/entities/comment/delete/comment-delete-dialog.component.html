@@ -1,0 +1,21 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+<form *ngIf="comment" name="deleteForm" (ngSubmit)="confirmDelete(comment.id!)">
+  <div class="modal-header">
+    <h4 class="modal-title" data-cy="commentDeleteDialogHeading">Delete Comment</h4>
+  </div>
+
+  <div class="modal-body">
+    <jhi-alert-error></jhi-alert-error>
+    <p id="jhi-delete-comment-heading">Are you sure you want to delete your comment "{{ comment.comment }}"?</p>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" id="cancel-deletion" data-dismiss="modal" (click)="cancel()">
+      <span>Cancel</span>
+    </button>
+
+    <button id="delete-comment" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+      <span>Delete</span>
+    </button>
+  </div>
+</form>

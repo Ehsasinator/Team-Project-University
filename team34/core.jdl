@@ -1,0 +1,71 @@
+entity UserSettings { 
+  theme THEME   
+  hud SIZE 
+  fontSize SIZE  
+  dyslexicFont Boolean  
+  colourBlindness Boolean  
+} 
+
+entity Player { 
+  playerIcon ImageBlob 
+} 
+
+entity Leaderboard { 
+  score Integer min(0) 
+  rank Integer min(1) 
+} 
+
+entity Competition {
+  dueDate Instant
+  word String required
+  open Boolean
+}
+
+entity Entry {
+  submission ImageBlob required
+  date Instant
+}
+
+entity Comment {
+  comment String required
+  date Instant
+}
+
+entity Report {
+	comment String
+    date Instant
+}
+
+entity Like
+
+enum SIZE { 
+  SMALL 
+  MEDIUM 
+  LARGE 
+} 
+
+enum THEME { 
+  LIGHT 
+  DARK 
+  SYSTEM 
+  HIGH_CONTRAST 
+} 
+
+relationship ManyToOne {
+  Entry { competition } to  Competition { entries }
+  Like { entry } to Entry { like }
+  Entry { user(login) } to User { entry }
+  Like { user(login) } to User { like }
+  Comment { entry } to Entry { comments }
+  Comment { user(login) } to User { comment }
+  Report { user(login) } to User { report }
+  Report { entry } to Entry { report }
+}
+
+relationship OneToOne {
+  UserSettings { user(login) } to User { userSettings }
+  Player { user(login) } to User { player }
+  Leaderboard { user(login) } to User { leaderboard }  
+}
+
+

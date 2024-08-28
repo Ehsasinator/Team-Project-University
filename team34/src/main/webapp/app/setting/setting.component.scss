@@ -1,0 +1,422 @@
+.setting-wireframe1 {
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  /*background-color: #4c27ac;*/
+  background-color: var(--back-colour);
+  /*var(--dl-color-default-darkpurple);*/
+}
+.setting-frame1 {
+  width: 600px;
+  height: 840px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-rectangle1 {
+  top: 0px;
+  left: 0px;
+  width: 600px;
+  height: 840px;
+  position: absolute;
+  border-color: rgba(133, 133, 133, 1);
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 60px;
+  background-color: #d9d9d9;
+}
+.setting-text {
+  top: 39px;
+  left: 162px;
+  color: rgba(0, 0, 0, 1);
+  width: 275px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-exit {
+  top: 28px;
+  left: 510px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+.setting-rectangle2 {
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #b7472e;
+}
+.setting-text02 {
+  top: 3px;
+  left: 7px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 50px;
+  font-style: Regular;
+  text-align: center;
+  font-family: 'Press Start 2P';
+  //font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-themeselection {
+  top: 118px;
+  left: 60px;
+  width: 480px;
+  height: 180px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-text03 {
+  left: 164px;
+  color: rgba(0, 0, 0, 1);
+  width: 153px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-dark {
+  top: 45px;
+  left: 195px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-dark-theme {
+  top: 0px;
+  left: 0px;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  border-color: rgba(133, 133, 133, 1);
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  background-color: black;
+}
+.setting-text05 {
+  top: 89px;
+  left: 18px;
+  color: rgba(0, 0, 0, 1);
+  width: 54px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-systemdefault {
+  top: 45px;
+  left: 345px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-text07 {
+  top: 93px;
+  left: 6px;
+  color: rgba(0, 0, 0, 1);
+  width: 78px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-selectmore1 {
+  top: 0px;
+  left: 0px;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  border-color: rgba(133, 133, 133, 1);
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  background-color: #afafaf;
+  /*var(--dl-color-default-midgrey);*/
+}
+.setting-light {
+  top: 45px;
+  left: 45px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-light-theme {
+  top: 0px;
+  left: 0px;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  border-color: rgba(133, 133, 133, 1);
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  /*var(--dl-color-gray-white);*/
+}
+.setting-text09 {
+  top: 87px;
+  left: 18px;
+  color: rgba(0, 0, 0, 1);
+  width: 54px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-volumeslider {
+  top: 298px;
+  left: 105px;
+  width: 397px;
+  height: 90px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-text11 {
+  left: 128px;
+  color: rgba(0, 0, 0, 1);
+  width: 136px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-selection-line {
+  top: 45.5px;
+  left: 2px;
+  width: 385px;
+  height: 5px;
+  position: absolute;
+  /*background-color: #afafaf;*/
+  background-color: rgba(0, 0, 0, 0);
+}
+.setting-currentslection {
+  top: 40px;
+  left: 382px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: #5b5b5b;
+  border-radius: 50%;
+}
+.setting-accessibilitysettingsbutton {
+  top: 390px;
+  left: 91px;
+  width: 420px;
+  height: 120px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+.setting-rectangle3 {
+  top: 28px;
+  left: 30px;
+  width: 358px;
+  height: 59px;
+  position: absolute;
+  border-color: rgba(133, 133, 133, 1);
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 29.5px;
+  background-color: #afafaf;
+  /*var(--dl-color-default-midgrey);*/
+}
+.setting-text13 {
+  top: 50px;
+  left: 40px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-changeaccount {
+  top: 700px;
+  left: 121px;
+  width: 360px;
+  height: 89px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-text16 {
+  top: 37px;
+  left: 75px;
+  color: #000000;
+  /*var(--dl-color-default-red);*/
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.setting-deleteaccount {
+  top: 751px;
+  left: 121px;
+  width: 360px;
+  height: 89px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.setting-text15 {
+  top: 37px;
+  left: 75px;
+  color: #b7472e;
+  /*var(--dl-color-default-red);*/
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  //font-family: 'Press Start 2P';
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 3px; /* Specified height */
+  background: #afafaf; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #5b5b5b;
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #5b5b5b; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.buttonbase {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}

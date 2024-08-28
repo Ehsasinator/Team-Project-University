@@ -1,0 +1,295 @@
+canvas {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+a {
+  height: 40px;
+  width: 40px;
+  background-color: #58d7ff;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-decoration: none;
+  background-size: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px #0099e6, 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+}
+
+a:active {
+  box-shadow: none;
+  top: 8px;
+  // transform: translateY(8px);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: min-content max-content min-content;
+  grid-template-rows: auto auto auto auto;
+  // justify-content: start; //end
+}
+
+.grid-item {
+  background-color: #ede9d6;
+  // border: 1px solid #000000;
+}
+
+.grid-2 {
+  height: 15px;
+}
+
+.grid-3 {
+  width: 30px;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.grid-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-10 {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.grid-11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95px;
+}
+
+.button-container-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  // align-items: center;
+  height: 100%;
+}
+
+.active-colour {
+  box-shadow: none !important;
+  top: 8px !important;
+}
+
+.active-more-colour {
+  box-shadow: none !important;
+  top: 8px !important;
+}
+
+.button-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.active-tool {
+  box-shadow: none !important;
+  top: 8px !important;
+}
+
+#black {
+  background-color: #000;
+  box-shadow: 0px 8px 0px #222121, 0px 8px 20px #222222;
+}
+
+#black:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#turquoise {
+  background-color: #1abc9c;
+  box-shadow: 0px 8px 0px #29ac91, 0px 8px 20px #222222;
+}
+
+#turquoise:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#carrot {
+  background-color: #e67e22;
+  box-shadow: 0px 8px 0px #a85f1f, 0px 8px 20px #222222;
+}
+
+#carrot:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#amethyst {
+  background-color: #9b59b6;
+  box-shadow: 0px 8px 0px #6d3e80, 0px 8px 20px #222222;
+}
+
+#amethyst:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#yellow {
+  background-color: #ffff00;
+  box-shadow: 0px 8px 0px #bdbd57, 0px 8px 20px #222222;
+}
+
+#yellow:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#red {
+  background-color: #ff0000;
+  box-shadow: 0px 8px 0px #960101, 0px 8px 20px #222222;
+}
+
+#red:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#green {
+  background-color: #00ff00;
+  box-shadow: 0px 8px 0px #01aa01, 0px 8px 20px #222222;
+}
+
+#green:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#chocolate {
+  background-color: #7b3f00;
+  box-shadow: 0px 8px 0px #311a00, 0px 8px 20px #222222;
+}
+
+#chocolate:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#neonblue {
+  background-color: #18dcff;
+  box-shadow: 0px 8px 0px #13aac5, 0px 8px 20px #222222;
+}
+
+#neonblue:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#electricblue {
+  background-color: #7efff5;
+  box-shadow: 0px 8px 0px #65cec5, 0px 8px 20px #222222;
+}
+
+#electricblue:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#creamypeach {
+  background-color: #f3a683;
+  box-shadow: 0px 8px 0px #bd8266, 0px 8px 20px #222222;
+}
+
+#creamypeach:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#roguepink {
+  background-color: #f8a5c2;
+  box-shadow: 0px 8px 0px #c28198, 0px 8px 20px #222222;
+}
+
+#roguepink:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.text-colour,
+.colour-options1,
+.colour-options2,
+.colour-options3 {
+  display: flex;
+  flex-direction: row;
+}
+
+#button1,
+#button2,
+#button3 {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+#gap {
+  margin-bottom: 10px;
+}
+
+.window {
+  position: absolute;
+  width: 450px;
+  height: 290px;
+  background-color: #ede9d6;
+  border: 1px solid #000000;
+  z-index: 9999;
+}
+
+.title-bar {
+  padding: 5px;
+  cursor: grab;
+  text-align: center;
+  user-select: none;
+  color: black;
+}
+
+.content {
+  padding: 5px;
+}
+
+#x {
+  background-color: red;
+  width: 30px;
+  float: right;
+}
+
+#error-message {
+  color: red;
+  text-align: center;
+}
+
+#apply {
+  background-color: yellow;
+}
+
+.slider-container {
+  display: flex;
+}
+
+.slider {
+  flex: 1;
+}

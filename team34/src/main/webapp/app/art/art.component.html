@@ -1,0 +1,94 @@
+<body>
+  <div class="grid-container">
+    <div class="grid-item grid-1"></div>
+    <div class="grid-item grid-2"></div>
+    <div class="grid-item grid-3"></div>
+    <div class="grid-item grid-4"></div>
+    <div class="grid-item grid-5"></div>
+    <div class="grid-item grid-6"></div>
+    <div class="grid-item grid-7">
+      <div class="button-container-left" (click)="changeTool($event)">
+        <div class="button-row">
+          <a id="pencil" data-tool="pencil" [class.active-tool]="currentTool === 'pencil'"></a>
+          <a id="brush" data-tool="brush" [class.active-tool]="currentTool === 'brush'"></a>
+        </div>
+        <div class="button-row">
+          <a id="square" data-tool="square" [class.active-tool]="currentTool === 'square'"></a>
+          <a id="square-outline" data-tool="square-outline" [class.active-tool]="currentTool === 'square-outline'"></a>
+        </div>
+        <div class="button-row">
+          <a id="circle" data-tool="circle" [class.active-tool]="currentTool === 'circle'"></a>
+          <a id="circle-outline" data-tool="circle-outline" [class.active-tool]="currentTool === 'circle-outline'"></a>
+        </div>
+        <div class="button-row">
+          <a id="triangle" data-tool="triangle" [class.active-tool]="currentTool === 'triangle'"></a>
+          <a id="triangle-outline" data-tool="triangle-outline" [class.active-tool]="currentTool === 'triangle-outline'"></a>
+        </div>
+        <div class="button-row">
+          <a id="undo" (click)="undo()"></a>
+          <a id="redo" (click)="redo()"></a>
+        </div>
+        <div class="button-row">
+          <a id="clear" data-tool="clear"></a>
+          <a id="eraser" data-tool="eraser" [class.active-tool]="currentTool === 'eraser'"></a>
+        </div>
+        <a id="download" (click)="downloadImage($event)"></a>
+      </div>
+    </div>
+    <div class="grid-item grid-8">
+      <canvas id="canvas" #myCanvas></canvas>
+    </div>
+    <div class="grid-item grid-9"></div>
+    <div class="grid-item grid-10">
+      <a id="home" (click)="home($event)"></a>
+    </div>
+    <div class="grid-item grid-11">
+      <div class="button-container-bottom" (click)="changeColour($event)">
+        <a id="black" data-colour="black" [class.active-colour]="activeColour === 'black'"></a>
+        <a id="turquoise" data-colour="turquoise" [class.active-colour]="activeColour === 'turquoise'"></a>
+        <a id="carrot" data-colour="carrot" [class.active-colour]="activeColour === 'carrot'"></a>
+        <a id="amethyst" data-colour="amethyst" [class.active-colour]="activeColour === 'amethyst'"></a>
+        <a id="yellow" data-colour="yellow" [class.active-colour]="activeColour === 'yellow'"></a>
+        <a id="red" data-colour="red" [class.active-colour]="activeColour === 'red'"></a>
+        <a id="green" data-colour="green" [class.active-colour]="activeColour === 'green'"></a>
+        <a id="chocolate" data-colour="chocolate" [class.active-colour]="activeColour === 'chocolate'"></a>
+        <a id="neonblue" data-colour="neonblue" [class.active-colour]="activeColour === 'neonblue'"></a>
+        <a id="electricblue" data-colour="electricblue" [class.active-colour]="activeColour === 'electricblue'"></a>
+        <a id="creamypeach" data-colour="creamypeach" [class.active-colour]="activeColour === 'creamypeach'"></a>
+        <a id="roguepink" data-colour="roguepink" [class.active-colour]="activeColour === 'roguepink'"></a>
+        <a id="plus" (click)="showMoreColours()" [class.active-more-colour]="activeMoreColour === 'plus'"></a>
+      </div>
+    </div>
+    <div class="grid-item grid-12"></div>
+  </div>
+  <div *ngIf="colour_selector" class="window" [style.top.px]="windowTop" [style.left.px]="windowLeft">
+    <div class="title-bar" (mousedown)="onMouseDown($event)">
+      <span>Colours</span>
+      <button id="x" (click)="closeWindow()">X</button>
+    </div>
+    <div class="content">
+      <div id="gap"></div>
+      <div class="options">
+        <div class="colour-options1">
+          <button id="button1" *ngFor="let colour of colour1" (click)="selectColor(colour)" [style.background-color]="colour"></button>
+        </div>
+        <div class="colour-options2">
+          <button id="button2" *ngFor="let colour of colour2" (click)="selectColor(colour)" [style.background-color]="colour"></button>
+        </div>
+        <div class="colour-options3">
+          <button id="button3" *ngFor="let colour of colour3" (click)="selectColor(colour)" [style.background-color]="colour"></button>
+        </div>
+        <div id="gap"></div>
+        <div class="slider-container">
+          <input type="range" min="1" max="150" class="slider" [(ngModel)]="thicknessInput" (ngModelChange)="getThickness()" />
+          <span id="sliderValue">&nbsp;{{ thicknessInput.toString().padStart(3, '0') }}</span>
+        </div>
+        <div class="text-colour">
+          <input type="text" placeholder="Colour Name or Hex" [(ngModel)]="colourInput" (keyup.enter)="inputColour()" />
+          <button id="apply" (click)="inputColour()">Apply</button>
+        </div>
+        <p *ngIf="showErrorMessage" id="error-message">Invalid Colour!</p>
+      </div>
+    </div>
+  </div>
+</body>

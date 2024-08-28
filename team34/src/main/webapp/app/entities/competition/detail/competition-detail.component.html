@@ -1,0 +1,56 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<body>
+  <div *ngIf="competition">
+    <p id="word">{{ competition.word }}</p>
+    <div id="gap"></div>
+    <p id="hidden" *ngIf="submitted">You have already submitted an entry for this competition!</p>
+    <div id="gap"></div>
+    <div class="row-container">
+      <p id="id">Competition ID: {{ competition.id }}</p>
+      <p id="date">Due Date: {{ competition.dueDate | formatMediumDatetime }}</p>
+      <div id="open-message">
+        <p id="open">Status:</p>
+        <p id="open-2" [ngClass]="{ green: competition.open, red: !competition.open }">{{ open }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons-top">
+    <a id="back" class="fancy" (click)="previousState()">Back</a>
+    <a id="new" class="fancy" *ngIf="competition && isOpen && !submitted" (click)="newEntry()">New Entry</a>
+    <a id="edit" class="fancy" *ngIf="isAdmin() && competition" [routerLink]="['/competition', competition.id, 'edit']">Edit Competition</a>
+    <a id="refresh" class="fancy" (click)="refresh()">Refresh</a>
+  </div>
+
+  <div id="gap2"></div>
+
+  <div class="alert alert-warning" *ngIf="entries?.length === 0">
+    <div id="no-result" *ngIf="competition && isOpen">
+      <p>No Entries found.</p>
+      <p>Be the first one to enter!</p>
+    </div>
+    <div id="no-result" *ngIf="competition && !isOpen">
+      <p>This competition is closed.</p>
+    </div>
+  </div>
+
+  <div class="main-section">
+    <div class="table-container">
+      <div class="table-row" *ngFor="let entry of entries; trackBy: trackId" data-cy="entityTable">
+        <div class="table-cell">
+          <div class="image-container">
+            <a *ngIf="entry.submission" [routerLink]="['/entry', entry.id, 'view']">
+              <img [src]="'data:' + entry.submissionContentType + ';base64,' + entry.submission" alt="entry image" />
+            </a>
+            <p class="hidden-text">
+              <span>By: {{ entry.user?.login }}</span
+              ><br />
+              Likes: {{ entry.likes?.length }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

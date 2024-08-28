@@ -1,0 +1,78 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<body class="main">
+  <div class="outer-container">
+    <p id="title">Leaderboard</p>
+    <a class="x-button" [routerLink]="['/']">X</a>
+    <div class="inner-container">
+      <div class="search-container">
+        <input class="search-bar" type="text" placeholder=" Search for a player" [(ngModel)]="parameter" (keyup.enter)="search()" />
+        <button class="search-button" type="submit" (click)="search()">Search</button>
+      </div>
+      <div class="table-responsive table-entities" id="entities" *ngIf="leaderboards && leaderboards.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+          <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+              <th scope="col" jhiSortBy="rank">
+                <div class="d-flex">
+                  <span>Rank</span>
+                  <!-- <fa-icon class="p-1" icon="sort"></fa-icon> -->
+                </div>
+              </th>
+              <th scope="col" jhiSortBy="user.login">
+                <div class="d-flex">
+                  <span>Player</span>
+                  <!-- <fa-icon class="p-1" icon="sort"></fa-icon> -->
+                </div>
+              </th>
+              <!-- <th scope="col" jhiSortBy="id">
+                <div class="d-flex">
+                  <span>ID</span>
+                  <fa-icon class="p-1" icon="sort"></fa-icon>
+                </div>
+              </th> -->
+              <th scope="col" jhiSortBy="score">
+                <div class="d-flex">
+                  <span>Score</span>
+                  <!-- <fa-icon class="p-1" icon="sort"></fa-icon> -->
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let leaderboard of leaderboards; trackBy: trackId" data-cy="entityTable">
+              <td>{{ leaderboard.rank }}</td>
+              <td>
+                <a id="link-search" (click)="toSearch(leaderboard.user?.login)">{{ leaderboard.user?.login }}</a>
+              </td>
+              <!-- <td>{{ leaderboard.id }}</td> -->
+              <!-- <td>
+                <a class="id-text" [routerLink]="['/leaderboard', leaderboard.id, 'view']">{{ leaderboard.id }}</a>
+              </td> -->
+              <td>{{ leaderboard.score }}</td>
+              <button
+                type="submit"
+                (click)="delete(leaderboard)"
+                *ngIf="isAdmin()"
+                class="btn btn-danger btn-sm"
+                data-cy="entityDeleteButton"
+              >
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="leaderboards?.length === 0">
+    <span>The Leaderboard Is Empty</span>
+  </div>
+</body>

@@ -1,0 +1,16 @@
+.row1 {
+  margin: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+.box {
+  padding: 1.5%;
+  background-color: #40228f;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 80vh;
+  width: 100%;
+  border-radius: 40px;
+}

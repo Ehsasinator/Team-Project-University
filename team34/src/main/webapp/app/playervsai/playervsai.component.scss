@@ -1,0 +1,138 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+label,
+p {
+  user-select: none;
+}
+
+canvas {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: crosshair;
+}
+
+.main-page {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#word {
+  font-size: 50px;
+  color: #ffd500;
+}
+
+.round-button {
+  color: white !important;
+  height: 100%;
+  background-color: #2eb765;
+  position: relative;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px #1f7a44, 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+  user-select: none;
+  text-decoration: none;
+}
+
+.round-button:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.main-button {
+  color: white !important;
+  height: 100%;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.2 ease;
+  user-select: none;
+}
+
+.main-button:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+#clear {
+  background-color: #349ebe;
+  box-shadow: 0px 8px 0px rgb(2, 104, 155), 0px 8px 20px #222222;
+  text-align: center;
+}
+
+#quit2 {
+  background-color: #e60f0f;
+  box-shadow: 0px 8px 0px #920a0a, 0px 8px 20px #222222;
+  text-align: center;
+}
+
+#submit {
+  background-color: #2eb765;
+  box-shadow: 0px 8px 0px #1f7a44, 0px 8px 20px #222222;
+  text-align: center;
+}
+
+#start {
+  background-color: #ffa800;
+  box-shadow: 0px 8px 0px #b17600, 0px 8px 20px #222222;
+  text-align: center;
+}
+
+#clock {
+  font-size: 30px;
+  color: #ffd500;
+}
+
+#title {
+  font-size: 50px;
+  color: #ffd500;
+}
+
+#round {
+  font-size: 50px;
+  color: #ffd500;
+}
+
+#final {
+  font-size: 50px;
+  color: #ffd500;
+}
+
+#gap {
+  margin-bottom: 1.5vw;
+}
+
+#result {
+  font-size: 40px;
+}
+
+#explanation {
+  font-size: 30px;
+  color: white;
+}
+
+.green-text {
+  color: #2eb765;
+}
+
+.red-text {
+  color: red;
+}

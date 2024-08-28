@@ -1,0 +1,119 @@
+.default,
+.main {
+  background-color: #4c27ac;
+  font-family: 'Press Start 2P';
+}
+
+#title {
+  font-size: 65px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+a {
+  color: white !important;
+  height: 100%;
+  background-color: #349ebe;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px rgb(2, 104, 155), 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+  user-select: none;
+}
+
+a:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.main-table td {
+  vertical-align: middle;
+}
+
+.table {
+  font-size: 25px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  user-select: none;
+}
+
+.table-titles {
+  display: flex;
+  justify-content: center;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  outline: 4px solid #fbff00;
+}
+
+.green-row {
+  background-color: green;
+}
+
+.red-row {
+  background-color: red;
+}
+
+#delete,
+#edit {
+  font-size: 15px;
+}
+
+#no-result {
+  font-size: 20px;
+  text-align: center;
+}
+
+#gap {
+  margin-bottom: 1vw;
+}
+
+.buttons-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.howToPlay {
+  background-color: #dd18cd;
+  font-family: 'Press Start 2P';
+  padding-bottom: 30px;
+}
+
+.x {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#title2 {
+  font-size: 50px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.instructions {
+  font-size: 20px;
+  color: #ffd500;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#gap2 {
+  margin-bottom: 2.5vw;
+}

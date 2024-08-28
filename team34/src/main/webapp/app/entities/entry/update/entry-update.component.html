@@ -1,0 +1,15 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<body>
+  <p id="word">{{ word }}</p>
+  <jhi-alert-error></jhi-alert-error>
+  <p id="hidden-text" *ngIf="editMode">Note: Editing will reset the like counter!</p>
+  <div class="container">
+    <jhi-art id="art" #artComponent *ngIf="isVisible"></jhi-art>
+    <div class="column-container">
+      <a class="column" (click)="ngOnInit()">Refresh</a>
+      <a class="column" *ngIf="isVisible" (click)="save()">Submit</a>
+      <a class="column" (click)="previousState()">Back</a>
+    </div>
+  </div>
+</body>

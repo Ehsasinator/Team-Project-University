@@ -1,0 +1,79 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div class="form-container">
+      <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+        <h2 class="jhi-comment-heading" *ngIf="editForm.controls.id.value !== null" data-cy="CommentCreateUpdateHeading">
+          Edit your Comment
+        </h2>
+        <h2 class="jhi-comment-heading" *ngIf="editForm.controls.id.value == null" data-cy="CommentCreateUpdateHeading">Send a Comment</h2>
+
+        <div>
+          <jhi-alert-error></jhi-alert-error>
+
+          <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+            <label class="form-label" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+
+          <div class="row mb-3">
+            <label class="form-label" for="field_comment">Comment</label>
+            <input type="text" class="form-control" name="comment" id="field_comment" data-cy="comment" formControlName="comment" />
+            <div *ngIf="editForm.get('comment')!.invalid && (editForm.get('comment')!.dirty || editForm.get('comment')!.touched)">
+              <small class="form-text text-danger" *ngIf="editForm.get('comment')?.errors?.required"> This field is required. </small>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label class="form-label" for="field_date">Date</label>
+            <div class="d-flex">
+              <input
+                id="field_date"
+                data-cy="date"
+                type="datetime-local"
+                class="form-control"
+                name="date"
+                formControlName="date"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label class="form-label" for="field_entry">Entry</label>
+            <select class="form-control" id="field_entry" data-cy="entry" name="entry" formControlName="entry" [compareWith]="compareEntry">
+              <option [ngValue]="null"></option>
+              <option [ngValue]="entryOption" *ngFor="let entryOption of entriesSharedCollection">{{ entryOption.id }}</option>
+            </select>
+          </div>
+
+          <div class="row mb-3">
+            <label class="form-label" for="field_user">User</label>
+            <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
+              <option [ngValue]="null"></option>
+              <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.login }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+            <span>Cancel</span>
+          </button>
+
+          <button
+            type="submit"
+            id="save-entity"
+            data-cy="entityCreateSaveButton"
+            [disabled]="editForm.invalid || isSaving"
+            class="btn btn-primary"
+          >
+            <span>Save</span>
+          </button>
+
+          <div *ngIf="isMissingField" class="alert alert-danger"><strong>Incomplete!</strong> Please fill out any missing fields.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

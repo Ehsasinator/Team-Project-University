@@ -1,0 +1,99 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<body #bodyElement class="default">
+  <div class="buttons-top">
+    <a [routerLink]="['/']">Home</a>
+    <a (click)="load()">Refresh</a>
+  </div>
+</body>
+
+<body class="main" *ngIf="!howToPlay">
+  <p id="title">Competitions</p>
+
+  <div class="top-buttons">
+    <a [routerLink]="['/']">Home</a>
+    <a (click)="ngOnInit()">Refresh List</a>
+    <a [routerLink]="['/competition/new']" *ngIf="isAdmin()">Create a new Competition</a>
+    <a (click)="help()">?</a>
+  </div>
+
+  <div id="gap"></div>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="competitions?.length === 0">
+    <span>No Competitions found</span>
+  </div>
+
+  <div class="table-entities" id="entities" *ngIf="competitions && competitions.length > 0">
+    <table class="table" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th *ngIf="isAdmin()" scope="col" jhiSortBy="id">
+            <div class="table-titles">
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+              <span>ID</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="word">
+            <div class="table-titles">
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+              <span>Word</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dueDate">
+            <div class="table-titles">
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+              <span>Due Date</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="open">
+            <div class="table-titles">
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+              <span>Open</span>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let competition of competitions; let i = index; trackBy: trackId">
+          <tr
+            class="main-table"
+            [routerLink]="['/competition', competition.id, 'view']"
+            [ngClass]="{ 'green-row': competition.open, 'red-row': !competition.open }"
+          >
+            <td *ngIf="isAdmin()">{{ competition.id }}</td>
+            <td>{{ competition.word }}</td>
+            <td>{{ competition.dueDate | formatMediumDatetime }}</td>
+            <td>{{ competition.open }}</td>
+            <td class="text-end">
+              <div class="btn-group">
+                <a id="edit" *ngIf="isAdmin()" [routerLink]="['/competition', competition.id, 'edit']" (click)="$event.stopPropagation()"
+                  >Edit</a
+                >
+                <a id="delete" *ngIf="isAdmin()" (click)="delete(competition); $event.stopPropagation()">Delete</a>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<body class="howToPlay" *ngIf="howToPlay">
+  <div class="x">
+    <a (click)="help()">X</a>
+  </div>
+  <p id="title2">How to Play</p>
+  <div id="gap2"></div>
+  <div class="instructions">
+    <p>1) Compete: Join themed drawing competitions</p>
+    <p>2) Submit: Create and submit one drawing per competition</p>
+    <p>3) Gain Likes: Earn points based on likes your entry receives (100 points per like)</p>
+    <p>4) Climb: Accumulate points to rise in the rankings</p>
+    <p>5) Interact: Like, comment, and report entries to engage with the community</p>
+    <p>6) Unlimited Play: Enter as many competitions as you like while they're open</p>
+  </div>
+</body>

@@ -1,0 +1,132 @@
+<div class="container1">
+  <Button class="home-button" [routerLink]="['']">HOME</Button>
+</div>
+<div class="row1">
+  <div class="profileSelection">
+    <div class="container2">
+      <h2 id="page-heading" data-cy="PlayerHeading">
+        <span class="select-profile-picture">Select a Profile Picture</span>
+      </h2>
+    </div>
+
+    <!-- <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert> -->
+
+    <div class="profile-pictures">
+      <label
+        id="profilePic1"
+        class="DefaultProfilePicImage img-fluid"
+        (click)="selectProfilePicture('profilePic1')"
+        (click)="increaseLabelSize('profilePic1')"
+        [ngClass]="{ selected: currentSelectedLabelId === 'profilePic1' }"
+      ></label>
+      <label
+        id="profilePic2"
+        class="ProfilePic2Image img-fluid"
+        (click)="selectProfilePicture('profilePic2')"
+        (click)="increaseLabelSize('profilePic2')"
+        [ngClass]="{ selected: currentSelectedLabelId === 'profilePic2' }"
+      ></label>
+    </div>
+    <div id="image-message1" class="hidden1">You have selected the Male Profile Picture.</div>
+    <div id="image-message2" class="hidden2">You have selected the Female Profile Picture.</div>
+  </div>
+</div>
+
+<!-- <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-player"
+        [routerLink]="['/player/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Player </span>
+      </button>
+    </div> -->
+
+<!-- <div>
+  <button (click)="selectProfilePicture()">Save Profile Picture</button>
+</div> -->
+
+<!-- <div class="profile-pictures">
+    <div *ngFor="let profilePic of profilePictures" class="profile-picture">
+      <img [src]="profilePic.url" (click)="selectProfilePicture(profilePic)" alt="Profile Picture" />
+    </div>
+  </div> -->
+
+<!-- <div class="alert alert-warning" id="no-result" *ngIf="players?.length === 0">
+    <span>No Players found</span>
+  </div> -->
+
+<!-- <div class="table-responsive table-entities" id="entities" *ngIf="players && players.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span>ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="playerIcon">
+            <div class="d-flex">
+              <span>Player Icon</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="user.login">
+            <div class="d-flex">
+              <span>User</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/player', player.id, 'view']">{{ player.id }}</a>
+          </td>
+          <td>
+            <a *ngIf="player.playerIcon" (click)="openFile(player.playerIcon, player.playerIconContentType)">
+              <img
+                [src]="'data:' + player.playerIconContentType + ';base64,' + player.playerIcon"
+                style="max-height: 30px"
+                alt="player image"
+              />
+            </a>
+            <span *ngIf="player.playerIcon">{{ player.playerIconContentType }}, {{ byteSize(player.playerIcon) }}</span>
+          </td>
+          <td>
+            {{ player.user?.login }}
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/player', player.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/player', player.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(player)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->

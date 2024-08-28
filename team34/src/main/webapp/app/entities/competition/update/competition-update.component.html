@@ -1,0 +1,69 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<body>
+  <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+    <h1 id="title" *ngIf="title">Create a Competition</h1>
+    <h1 id="title" *ngIf="!title">Edit a Competition</h1>
+    <div class="top-buttons">
+      <a (click)="previousState()">Cancel</a>
+      <a (click)="ngOnInit()">Refresh</a>
+    </div>
+    <jhi-alert-error></jhi-alert-error>
+
+    <div *ngIf="editForm.controls.id.value !== null">
+      <p id="id" *ngIf="competition">Competition ID: {{ competition.id }}</p>
+    </div>
+
+    <div id="gap"></div>
+
+    <div class="center-wrapper" *ngIf="load">
+      <p id="date" for="field_dueDate">Due Date:</p>
+      <input
+        id="field_dueDate"
+        data-cy="dueDate"
+        type="datetime-local"
+        class="form-control"
+        name="dueDate"
+        formControlName="dueDate"
+        placeholder="YYYY-MM-DD HH:mm"
+      />
+    </div>
+
+    <div id="gap"></div>
+
+    <div class="centered-elements" *ngIf="load">
+      <p id="open" for="field_open" style="display: inline-block; margin-right: 10px">Open:</p>
+      <input
+        type="checkbox"
+        class="form-check bigger-checkbox"
+        name="open"
+        id="field_open"
+        data-cy="open"
+        formControlName="open"
+        style="display: inline-block"
+      />
+    </div>
+
+    <div id="gap"></div>
+
+    <div class="center-wrapper3" *ngIf="load">
+      <p id="word" for="field_word">Word:</p>
+      <input type="text" class="form-control" name="word" id="field_word" data-cy="word" formControlName="word" />
+      <div *ngIf="editForm.get('word')!.invalid && (editForm.get('word')!.dirty || editForm.get('word')!.touched)">
+        <small class="form-text text-danger" *ngIf="editForm.get('word')?.errors?.required"> This field is required. </small>
+      </div>
+    </div>
+
+    <div id="gap2"></div>
+
+    <div class="container4" *ngIf="load">
+      <a (click)="randomWord()">Random Word</a>
+    </div>
+
+    <div id="gap3"></div>
+
+    <div class="container5">
+      <a *ngIf="load" id="save" (click)="save()" [class.active-disable]="editForm.invalid || isSaving">Save</a>
+    </div>
+  </form>
+</body>

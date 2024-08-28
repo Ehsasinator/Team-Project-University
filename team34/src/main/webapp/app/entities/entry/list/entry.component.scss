@@ -1,0 +1,94 @@
+body {
+  background-color: #ede9d6;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  font-family: 'Press Start 2P';
+}
+
+#title {
+  font-size: 45px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.fancy {
+  color: white !important;
+  height: 100%;
+  background-color: #349ebe;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px rgb(2, 104, 155), 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+  user-select: none;
+}
+
+.fancy:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.table-titles {
+}
+
+.table {
+  font-size: 20px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  user-select: none;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  outline: 4px solid #4c27ac;
+}
+
+.main-table td {
+  vertical-align: middle;
+  // max-width: 30vw;
+}
+
+#gap {
+  margin-bottom: 1vw;
+}
+
+#no-result {
+  font-size: 20px;
+  text-align: center;
+}
+
+#home,
+#refresh {
+  font-size: 15px;
+}
+
+#edit,
+#view {
+  font-size: 13px;
+}
+
+th[scope='col'] #sort-like {
+  cursor: pointer;
+}
+
+.green {
+  color: #1eff00;
+}
+
+.red {
+  color: red;
+}

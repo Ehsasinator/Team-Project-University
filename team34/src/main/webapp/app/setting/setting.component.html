@@ -1,0 +1,33 @@
+<div>
+  <div class="setting-wireframe1">
+    <div class="setting-frame1">
+      <div class="setting-rectangle1">
+        <span class="setting-text"><span>Settings</span></span>
+        <button class="setting-exit" type="button" (click)="backToHomePage()">
+          <div class="setting-rectangle2">
+            <span class="setting-text02"><span>x</span></span>
+          </div>
+        </button>
+        <div class="setting-themeselection">
+          <span class="setting-text03"><span>Theme</span></span>
+          <div class="setting-dark" (click)="changeThemeDark()">
+            <div class="setting-dark-theme"></div>
+            <span class="setting-text05"><span>Dark</span></span>
+          </div>
+          <!--<div class="setting-systemdefault">
+            <div class="setting-selectmore1"></div>
+            <span class="setting-text07"><span>System Default</span></span>
+          </div>-->
+          <div class="setting-light" (click)="changeThemeLight()">
+            <div class="setting-light-theme"></div>
+            <span class="setting-text09"><span>Light</span></span>
+          </div>
+        </div>
+        <button class="setting-accessibilitysettingsbutton" type="button" (click)="toAccessibilityPage()">
+          <div class="setting-rectangle3"></div>
+          <span class="setting-text13"><span>Accessibility settings</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

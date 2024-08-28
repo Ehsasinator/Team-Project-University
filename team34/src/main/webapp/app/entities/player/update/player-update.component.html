@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-player-heading" data-cy="PlayerCreateUpdateHeading">Create or edit a Player</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_playerIcon">Player Icon</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('playerIconContentType')!.value + ';base64,' + editForm.get('playerIcon')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('playerIcon')!.value"
+              alt="player image"
+            />
+            <div *ngIf="editForm.get('playerIcon')!.value" class="form-text text-danger clearfix">
+              <span class="pull-start"
+                >{{ editForm.get('playerIconContentType')!.value }}, {{ byteSize(editForm.get('playerIcon')!.value!) }}</span
+              >
+              <button
+                type="button"
+                (click)="clearInputImage('playerIcon', 'playerIconContentType', 'file_playerIcon')"
+                class="btn btn-secondary btn-xs pull-end"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_playerIcon"
+              data-cy="playerIcon"
+              (change)="setFileData($event, 'playerIcon', true)"
+              accept="image/*"
+            />
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="playerIcon"
+            id="field_playerIcon"
+            data-cy="playerIcon"
+            formControlName="playerIcon"
+          />
+          <input
+            type="hidden"
+            class="form-control"
+            name="playerIconContentType"
+            id="field_playerIconContentType"
+            formControlName="playerIconContentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.login }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

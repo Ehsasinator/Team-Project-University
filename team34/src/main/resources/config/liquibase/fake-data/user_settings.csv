@@ -1,0 +1,11 @@
+id;theme;hud;font_size;dyslexic_font;colour_blindness
+1;HIGH_CONTRAST;LARGE;LARGE;true;true
+2;SYSTEM;LARGE;MEDIUM;true;true
+3;LIGHT;LARGE;MEDIUM;false;true
+4;LIGHT;MEDIUM;SMALL;false;false
+5;HIGH_CONTRAST;SMALL;SMALL;true;true
+6;LIGHT;LARGE;SMALL;false;true
+7;DARK;LARGE;SMALL;true;true
+8;SYSTEM;LARGE;SMALL;false;true
+9;DARK;MEDIUM;MEDIUM;false;false
+10;SYSTEM;SMALL;SMALL;false;true

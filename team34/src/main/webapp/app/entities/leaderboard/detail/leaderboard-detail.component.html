@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="leaderboard">
+      <h2 data-cy="leaderboardDetailsHeading"><span>Leaderboard</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ leaderboard.id }}</span>
+        </dd>
+        <dt><span>Score</span></dt>
+        <dd>
+          <span>{{ leaderboard.score }}</span>
+        </dd>
+        <dt><span>Rank</span></dt>
+        <dd>
+          <span>{{ leaderboard.rank }}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+          <span>{{ leaderboard.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/leaderboard', leaderboard.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<body>
+  <div class="search">
+    <input class="custom-input" type="text" placeholder="Username" [(ngModel)]="username" (keyup.enter)="searchInput()" />
+    <div id="gap-horizontal"></div>
+    <button class="search-button" (click)="searchInput()">Search</button>
+  </div>
+
+  <div id="gap-top"></div>
+
+  <p id="title">{{ title }}</p>
+  <div class="top-buttons">
+    <a id="home" class="fancy" [routerLink]="['/']">Home</a>
+    <a id="competition" class="fancy" [routerLink]="['/competition']">Competitions</a>
+    <a id="refresh" class="fancy" (click)="searchInput()">Refresh</a>
+  </div>
+
+  <div id="gap"></div>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="entries?.length === 0">
+    <span>No Entries found</span>
+  </div>
+
+  <div class="table-entities" id="entities" *ngIf="entries && entries.length > 0">
+    <table class="table" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort>
+          <th scope="col">
+            <div class="table-titles">
+              <span>Competition</span>
+            </div>
+          </th>
+          <th scope="col" (click)="sortByDate()">
+            <div id="sort-date" class="table-titles">
+              <span>Date</span>
+              <fa-icon class="p-1" [icon]="!ascending ? 'sort-up' : 'sort-down'"></fa-icon>
+            </div>
+          </th>
+          <th scope="col">
+            <div class="table-titles">
+              <span>Submission</span>
+            </div>
+          </th>
+          <th scope="col" (click)="sortByLikes()">
+            <div id="sort-like" class="table-titles">
+              <span>Likes</span>
+              <fa-icon class="p-1" [icon]="sortByLikesOrder === 'asc' ? 'sort-up' : 'sort-down'"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let entry of entries; trackBy: trackId">
+          <tr class="main-table">
+            <td>
+              <div *ngIf="entry.competition && entry.competitionObject">
+                <a
+                  [routerLink]="['/competition', entry.competition.id, 'view']"
+                  [ngClass]="{ green: entry.competitionObject.open, red: !entry.competitionObject.open }"
+                  >{{ entry.competitionObject.word }}</a
+                >
+              </div>
+            </td>
+            <td>{{ formatDate(entry.date) }}</td>
+            <td>
+              <a *ngIf="entry.submission" (click)="openFile(entry.submission, entry.submissionContentType)">
+                <img
+                  [src]="'data:' + entry.submissionContentType + ';base64,' + entry.submission"
+                  style="max-height: 150px"
+                  alt="entry image"
+                />
+              </a>
+            </td>
+            <td>{{ entry.likes?.length }}</td>
+            <td class="text-end">
+              <div class="btn-group">
+                <a class="fancy" id="view" [routerLink]="['/entry', entry.id, 'view']">View</a>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</body>

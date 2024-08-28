@@ -1,0 +1,6 @@
+Pillow
+keras
+numpy
+flask
+gevent
+tensorflow

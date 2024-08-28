@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<body id="main">
+  <div *ngIf="showDoodlePage" class="main-page">
+    <!-- Existing content for normal page -->
+    <p id="word">{{ ranword }}</p>
+    <label id="clock" *ngIf="timer > 0">00:{{ timer < 10 ? '0' + timer : timer }}</label>
+    <canvas #canvas width="280" height="280"></canvas>
+    <a class="main-button" id="start" *ngIf="showStart" (click)="startTimer()">Start</a>
+    <a class="main-button" id="submit" (click)="submitDoodle()">Submit</a>
+    <a class="main-button" id="clear" (click)="initializeCanvas()">Clear</a>
+    <a class="main-button" id="quit2" [routerLink]="['/']">Quit</a>
+  </div>
+
+  <div *ngIf="showResult">
+    <!-- Result page content -->
+    <p id="title">Results Page</p>
+  </div>
+
+  <p *ngIf="showPredictedWord" id="result" [ngClass]="{ 'green-text': checkPoint === ' Correct', 'red-text': checkPoint !== ' Correct' }">
+    {{ checkPoint }}
+  </p>
+  <div *ngIf="showPredictedWord" id="gap"></div>
+  <p *ngIf="showPredictedWord" id="explanation">{{ word }}</p>
+  <div *ngIf="showPredictedWord" id="gap"></div>
+  <div>
+    <a *ngIf="showNextButton" (click)="next()" class="round-button" id="next">Next</a>
+    <a *ngIf="showNextButton" class="round-button" id="quit2" [routerLink]="['/']">Quit</a>
+  </div>
+  <div *ngIf="showRounds">
+    <!-- Result page content -->
+    <p id="round">Round: {{ num }}</p>
+  </div>
+  <div id="gap"></div>
+  <p *ngIf="showRoundsWord" id="word">{{ ranword }}</p>
+  <div id="gap"></div>
+  <div>
+    <a class="round-button" *ngIf="showStartButton" (click)="startNewGame()">Start</a>
+    <a class="round-button" id="quit2" *ngIf="showStartButton" [routerLink]="['/']">Quit</a>
+  </div>
+
+  <!-- Result page content -->
+  <label *ngIf="showFinalPage" id="final">You got {{ finalScore }}</label>
+  <a *ngIf="showFinalPage" class="round-button" id="home" [routerLink]="['/']">Home</a>
+</body>

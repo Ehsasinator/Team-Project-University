@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-user-settings-heading" data-cy="UserSettingsCreateUpdateHeading">Create or edit a User Settings</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_theme">Theme</label>
+          <select class="form-control" name="theme" formControlName="theme" id="field_theme" data-cy="theme">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let tHEME of tHEMEValues" [value]="tHEME">tHEME</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_hud">Hud</label>
+          <select class="form-control" name="hud" formControlName="hud" id="field_hud" data-cy="hud">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let sIZE of sIZEValues" [value]="sIZE">sIZE</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_fontSize">Font Size</label>
+          <select class="form-control" name="fontSize" formControlName="fontSize" id="field_fontSize" data-cy="fontSize">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let sIZE of sIZEValues" [value]="sIZE">sIZE</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_dyslexicFont">Dyslexic Font</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="dyslexicFont"
+            id="field_dyslexicFont"
+            data-cy="dyslexicFont"
+            formControlName="dyslexicFont"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_colourBlindness">Colour Blindness</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="colourBlindness"
+            id="field_colourBlindness"
+            data-cy="colourBlindness"
+            formControlName="colourBlindness"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="userOption" *ngFor="let userOption of usersSharedCollection">{{ userOption.login }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

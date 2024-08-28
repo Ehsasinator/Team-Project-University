@@ -1,0 +1,43 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<body>
+  <p id="word" *ngIf="entry">{{ this.competition?.word }}</p>
+  <div class="top-buttons">
+    <a class="fancy" (click)="previousState()">Back</a>
+    <a class="fancy" *ngIf="entry && !isLoggedIn" [routerLink]="['/login']">Login</a>
+  </div>
+  <p id="hidden-text" *ngIf="entry && !isLoggedIn">Login to Like, Comment and Report!</p>
+  <p id="hidden-text" *ngIf="entry && !open">Liking has closed!</p>
+  <div id="gap"></div>
+  <div class="details">
+    <p *ngIf="entry">By: {{ entry.user?.login }}</p>
+    <p class="space"></p>
+    <p *ngIf="entry">Date: {{ entry.date | formatMediumDatetime }}</p>
+  </div>
+  <div *ngIf="entry && entry.submission">
+    <div class="image-container">
+      <a>
+        <img
+          id="picture"
+          [src]="'data:' + entry.submissionContentType + ';base64,' + entry.submission"
+          style="max-width: 100%"
+          alt="entry image"
+          (click)="openFile(entry.submission, entry.submissionContentType)"
+        />
+      </a>
+    </div>
+  </div>
+  <div id="gap-small"></div>
+  <div class="details">
+    <p *ngIf="entry">Likes: {{ likes }}</p>
+  </div>
+  <div id="gap"></div>
+  <div class="bottom-buttons">
+    <a class="fancy" *ngIf="entry" [class.active-down]="!isLoggedIn" (click)="navigateToComment(entry.id)">Comments</a>
+    <a class="fancy" *ngIf="entry && isLoggedIn && isMine" (click)="edit()">Edit</a>
+    <a class="fancy" *ngIf="entry && !liked" [class.active-down]="liked || !isLoggedIn || !open" (click)="like()">&nbsp;Like&nbsp;</a>
+    <a class="fancy" *ngIf="entry && liked" (click)="likeRemove()" [class.active-down]="!liked || !isLoggedIn || !open">Unlike</a>
+    <a class="fancy" *ngIf="entry" (click)="downloadImage()">Download</a>
+    <a class="fancy" *ngIf="entry" [class.active-down]="!isLoggedIn" (click)="navigateToReport(entry.id, entry.user?.toString())">Report</a>
+  </div>
+</body>

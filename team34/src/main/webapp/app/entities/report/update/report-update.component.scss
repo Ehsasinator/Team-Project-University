@@ -1,0 +1,50 @@
+.form-container {
+  background-color: #4c27ac;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#jhi-report-heading {
+  color: #fff;
+  font-family: 'Press Start 2P', serif;
+  margin-bottom: 20px;
+}
+
+#admin-jhi-report-heading {
+  color: #fff;
+  font-family: 'Press Start 2P', serif;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  color: #fff;
+  font-family: 'Press Start 2P', serif;
+}
+
+.btn {
+  font-family: 'Press Start 2P', serif;
+}
+
+#view-post {
+  background-color: #ffa800;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.btn-save {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}

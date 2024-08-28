@@ -1,0 +1,76 @@
+<link href="https://fonts.googleapis.com/css?family=Press Start 2P" rel="stylesheet" />
+
+<div class="mainPage">
+  <div class="homepage-navbar d-flex justify-content-between">
+    <div class="dropdown">
+      <div class="character push_buttons" (click)="toggleDropdown()">
+        <div class="profileOuterCircle">
+          <div class="profileInnerCircle">
+            <a *ngIf="player">
+              <img
+                [src]="'data:' + player.playerIconContentType + ';base64,' + player.playerIcon"
+                style="max-height: 70px"
+                alt="player image"
+              />
+            </a>
+            <a *ngIf="!player">
+              <span>Pfp </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="username usernameOuterCircle">
+          <div class="usernameInnerCircle">
+            <div class="username">{{ account?.login || 'Guest' }}</div>
+          </div>
+        </div>
+
+        <!-- Dropdown content -->
+        <div *ngIf="showDropdown" class="dropdown-content">
+          <button routerLink="./player" class="dropdownButtons">Edit Picture</button>
+          <button routerLink="./entry" class="dropdownButtons">My Entries</button>
+          <button class="dropdownButtons" (click)="logout()" id="logout" data-cy="logout">
+            <fa-icon icon="sign-out-alt" [fixedWidth]="true"></fa-icon>
+            <span>Log out</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="GuessMyDoodle"><span class="GuessMyDoodleImage"></span></div>
+
+    <div class="buttons navbar-buttons">
+      <ul class="Button-List">
+        <li class="homepage-search push_buttons"><span class="searchImage" routerLink="./search"></span></li>
+        <li class="homepage-leaderboard push_buttons"><span class="leaderBoardImage" routerLink="./leaderboard"></span></li>
+        <li class="homepage-settings push_buttons"><span class="settingsImage" routerLink="./setting"></span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="filler"></div>
+
+  <div class="row1">
+    <div class="gameModesSquare">
+      <div>
+        <ul class="gamemodes">
+          <li>
+            <input type="radio" name="gameMode" id="competition" (change)="selectGameMode('Competition')" />
+            <label for="competition" id="competitionImage" (click)="increaseLabelSize('competitionImage')"></label>
+          </li>
+          <li>
+            <input type="radio" name="gameMode" id="practice" (change)="selectGameMode('Practice')" />
+            <label for="practice" id="practiceImage" (click)="increaseLabelSize('practiceImage')"> </label>
+          </li>
+          <li>
+            <input type="radio" name="gameMode" id="playerVsAI" (change)="selectGameMode('Player VS AI')" />
+            <label for="playerVsAI" id="playerVsAiImage" (click)="increaseLabelSize('playerVsAiImage')"></label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <button (click)="playGame()" class="startButton push_buttons" style="left: 40px; top: 15px">Start</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+body {
+  background-color: #ede9d6;
+  font-family: 'Press Start 2P';
+  padding-bottom: 30px;
+}
+
+.fancy {
+  color: white !important;
+  height: 100%;
+  background-color: #349ebe;
+  position: relative;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 0px rgb(2, 104, 155), 0px 8px 20px #222222;
+  transition: all 0.2 ease;
+  user-select: none;
+}
+
+.fancy:active {
+  box-shadow: none;
+  top: 8px;
+}
+
+.active-down {
+  box-shadow: none !important;
+  top: 8px !important;
+  pointer-events: none;
+}
+
+#word {
+  font-size: 55px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#hidden-text {
+  font-size: 20px;
+  text-align: center;
+  color: red;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-style: italic;
+}
+
+#name,
+#date {
+  font-size: 15px;
+  text-align: center;
+  color: #ffd500;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.bottom-buttons,
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gap {
+  margin-bottom: 1.5vw;
+}
+
+#gap-small {
+  margin-bottom: 0.5vw;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+#picture {
+  border: 2px solid black;
+  user-select: none;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.space {
+  margin-left: 130px;
+}
