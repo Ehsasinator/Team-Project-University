@@ -1,4 +1,4 @@
-# Team-Project-University
+# Team-Project-University-JAVA
 
 This is the team project which contains the implementation of the AI doodle guessing model from my other repo linked here: https://github.com/Ehsasinator/AI-doodle-guesser
 
